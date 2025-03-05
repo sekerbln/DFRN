@@ -34,9 +34,80 @@
 
     body {
       font-size: 16px;
-      text-align: center;
+      text-align: left;
       padding: 20px;
       transition: margin-left 0.3s ease-in-out;
+    }
+
+    .feature-text {
+      width: 100%;
+      padding: 15px 15px 15px 0;
+      text-align: left;
+      background: white; /* 背景色 */
+      border-radius: 20px;
+      line-height: 1;
+    }
+
+    .feature-text h2 {
+      font-family: 'PP Telegraf Bold', sans-serif;
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    .feature-text p {
+      font-family: 'PP Telegraf Regular', sans-serif;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .features-header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #F6F6F6;
+      width: 100%;
+      color: #F6F6F6;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: left;
+    }
+
+    .features-header h2 {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: 'PP Telegraf Bold', sans-serif;
+      margin: 0;
+      color: black;
+    }
+
+    .features-header h3 {
+      color: black;
+      font-size: 18px;
+      font-weight: normal;
+      font-family: 'PP Telegraf Regular', sans-serif;
+      flex-grow: 1;
+      margin-left: 20px;
+    }
+
+    .features-button {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background-color: #ffffff;
+      color: black;
+      font-family: 'PP Telegraf Regular', sans-serif;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .features-button:hover {
+      background-color: #E0E0E0;
     }
 
     .header {
@@ -44,7 +115,7 @@
       justify-content: flex-start;
       align-items: center;
       width: 100%;
-      padding: 10px 20px;
+      padding: 20px 20px;
       position: fixed;
       top: 0;
       left: 0;
@@ -54,16 +125,18 @@
 
     .header .logo {
       position: absolute;
-      left: 20px;
-      top: 50%;
+      left: 40px;
+      top: 30px;
       transform: none;
       font-family: 'PP Telegraf Bold', sans-serif;
     }
 
     .logo {
+      left: 20px;
+      top: 30px;
       font-size: 24px;
       font-weight: bold;
-      margin-left: 0;
+      margin-left: 10px;
       font-family: 'PP Telegraf Bold', sans-serif;
     }
 
@@ -112,18 +185,56 @@
       margin-left: 250px;
     }
 
-    .header .logo {
-      position: fixed;
-      left: 20px;
-      top: 20px;
-      transform: none;
+    @media screen and (max-width: 1023px) {
+      .features-header {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      /* 如有需要，可为 h2 和 h3 添加额外的间距 */
+      .features-header h2 {
+        margin-bottom: 10px;
+      }
+      .features-header h3 {
+        margin: 0;
+      }
+      /* 如果按钮也需要调整位置，可以做相应修改 */
+      .features-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* 移除之前的 transform 属性 */
+        transform: none;
+        /* 如有需要，可以增加一点内边距 */
+        margin: 15px;
+      }
     }
 
+
+
     @media screen and (min-width: 1024px) {
+      body {
+        margin-left: 0;
+      }
       .menu {
         left: 0;
       }
-      body, .header, .hero-image, .hero {
+      .header .logo {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        transform: none;
+      }
+      .content-container,
+      .features-container {
+        max-width: 1200px; /* 根据需要调整最大宽度 */
+        margin: 0 auto;    /* 居中显示 */
+        padding: 0 20px;   /* 左右内边距 */
+      }
+      .features-container {
+        margin-top: 50px;
+      }
+      .header, .hero-image, .hero {
         margin-left: 50px;
         transition: margin-left 0.3s ease-in-out;
       }
@@ -137,6 +248,9 @@
         gap: 0px;
         flex-direction: row;
         width: auto;
+        max-width: 1200px; /* 根据设计需求调整最大宽度 */
+        margin: 0 auto;    /* 居中显示 */
+        padding: 0 20px;   /* 左右内边距 */
       }
       .hero-container {
         flex: 2; /* Added */
@@ -158,6 +272,16 @@
       }
       .quiz-item {
         width: 100%; /* Each quiz item takes full width of quiz-section */
+      }
+      .features-container .quiz-section {
+        flex-direction: row;       /* 将项目排列方向改为行 */
+        flex-wrap: nowrap;         /* 不换行，确保四个项目在一行 */
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .features-container .quiz-item {
+        width: calc(25% - 15px);    /* 四个项目平分宽度，可根据 gap 适当调整 */
       }
     }
 
@@ -184,16 +308,23 @@
       color: white;
       border-radius: 20px;
       text-align: left;
+      line-height: 1;
       margin-bottom: 20px;
       align-items: flex-start;
+    }
+
+    .hero h3 {
+      margin-top: 5px;  /* 根据需要调整间距 */
+      font-size: 18px;   /* 可调整字体大小 */
+      font-family: 'PP Telegraf Regular', sans-serif; /* 或你需要的字体样式 */
     }
 
     .hero button {
       background-color: white;
       color: black;
-      font-family: 'PP Telegraf', sans-serif;
+      font-family: 'PP Telegraf Bold', sans-serif;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 20px;
       padding: 12px 24px;
       cursor: pointer;
       border: none;
@@ -245,6 +376,70 @@
       text-align: left;
       background: white; /* Ensures text background is separate */
       border-radius: 20px; /* Rounded bottom corners */
+      line-height: 1;
+
+      .features-container {
+        width: 100%;
+        margin-top: 100px;
+        text-align: left;
+      }
+
+      .features-container h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+        padding-left: 20px;
+        max-width: 100%; /* Prevents overflow */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1;
+      }
+
+
+      .features-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .feature-item {
+        width: calc(33.33% - 20px); /* Ensures three items per row */
+        background: #f4f4f4; /* Placeholder background */
+        border-radius: 20px;
+        text-align: left;
+        padding: 15px;
+      }
+
+      .feature-image-container {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* Makes it square */
+        background: #bbb; /* Placeholder background */
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .feature-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .feature-text-container {
+        padding: 10px;
+      }
+
+      .feature-text-container p {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .feature-text-container h2 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
     }
 
   </style>
@@ -269,7 +464,7 @@
 
     <div class="hero">
       <h2>ZeitGuard: The Procrastination App for Students</h2>
-      <p>Struggling with procrastination? ZeitGuard helps students learn effectively. Download the app today!</p>
+      <h3>Struggling with procrastination? ZeitGuard helps students learn effectively. Download the app today!</h3>
       <button>Download Now</button>
     </div>
   </div>
@@ -279,7 +474,7 @@
       <div class="quiz-image-container">
         <img src="images/quiz-image1.png" alt="Quiz Image 1">
       </div>
-      <div class="quiz-text-container">
+      <div class="feature-text">
         <p>QUIZ</p>
         <h2>Are you a procrastinator?</h2>
       </div>
@@ -288,7 +483,7 @@
       <div class="quiz-image-container">
         <img src="images/quiz-image2.png" alt="Quiz Image 2">
       </div>
-      <div class="quiz-text-container">
+      <div class="feature-text">
         <p>FEATURES</p>
         <h2>How ZeitGuard Making Your Studies More Effective?</h2>
       </div>
@@ -296,6 +491,51 @@
   </div>
 </div>
 
+<div class="features-container">
+  <div class="features-header">
+    <h2>Highlight</h2>
+    <h3>How ZeitGuard Helps You Overcome Procrastination?</h3>
+    <button class="features-button">Check more</button>
+  </div>
+  <div class="quiz-section">
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature1.png" alt="Feature 1">
+      </div>
+      <div class="feature-text">
+        <h2>Scientific Insights into Procrastination – Uncovering the Root Cause</h2>
+        <p>Offers clear, accessible insights into procrastination—helping students understand its causes, effects, and impact.</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature2.png" alt="Feature 2">
+      </div>
+      <div class="feature-text">
+        <h2>Instant Study Support – Stay Focused, Distraction-Free</h2>
+        <p>Through step-by-step study task guidance and focus room, help you concentrate on your study task and get things done.</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature3.png" alt="Feature 3">
+      </div>
+      <div class="feature-text">
+        <h2>Prioritize Smarter with the Eisenhower Matrix – Focus on What Truly Matters</h2>
+        <p>Struggling with task overload? Our app uses the Eisenhower Matrix to help you prioritize effectively.</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature4.png" alt="Feature 4">
+      </div>
+      <div class="feature-text">
+        <h2>Your Schedule, Simplified – See Everything at a Glance</h2>
+        <p>Effortlessly manage your coursework and daily tasks with our intuitive calendar. View your schedule by day, week, or month—all in one place.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
