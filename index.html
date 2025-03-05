@@ -39,6 +39,143 @@
       transition: margin-left 0.3s ease-in-out;
     }
 
+    .footer {
+      background-color: white;  /* 底部背景颜色 */
+      color: black;             /* 文本颜色 */
+      padding: 20px 0;         /* 上下内边距 */
+      text-align: center;      /* 文本居中 */
+      border-radius: 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;       /* 限制内容最大宽度 */
+      margin: 0 auto;          /* 居中 */
+      padding: 0 20px;         /* 左右内边距 */
+    }
+
+    .footer-nav a {
+      color: black;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    .faq-section {
+      margin-top: 40px;
+      padding: 20px;
+      background: #F6F6F6;
+      border-radius: 20px;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'PP Telegraf Bold', sans-serif;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question span {
+      font-size: 18px;
+      font-family: 'PP Telegraf Bold', sans-serif;
+    }
+
+    .faq-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      font-family: 'PP Telegraf Bold', sans-serif;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: 'PP Telegraf Regular', sans-serif;
+    }
+
+    .download-header {
+      text-align: center;           /* 所有内容居中 */
+      display: flex;
+      flex-direction: column;       /* 垂直排列 h2 和 button */
+      align-items: center;          /* 子元素居中对齐 */
+      padding-top: 100px;
+      padding-bottom: 100px;
+      gap: 10px;                    /* h2 和 button 之间的间隔 */
+      background: url('images/download-image.png') no-repeat center center/cover;
+      border-radius: 20px;
+      margin-top: 40px;
+    }
+
+    .download-header h2 {
+      margin: 0;                    /* 清除默认外边距 */
+      color: white;
+    }
+
+    .download-button {
+      padding: 15px 30px;           /* 按钮的内边距 */
+      font-size: 18px;              /* 按钮的字体大小 */
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-family: 'PP Telegraf Regular', sans-serif;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .download-header  {
+      padding: 100px 30px;           /* 按钮的内边距 */
+      font-size: 18px;              /* 按钮的字体大小 */
+      background-color: #ffffff;
+      color: black;
+      font-family: 'PP Telegraf Regular', sans-serif;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .faq-container {
+      background-color: #F6F6F6;  /* 与 features-header 类似的背景色 */
+      padding: 10px 20px;
+      border-radius: 20px;      /* 圆角效果 */
+      text-align: left;         /* 根据需要设置文本对齐 */
+      margin-bottom: 40px;      /* FAQ 与其它部分之间的间距 */
+      margin-top: 40px;
+    }
+
+    .faq-container h2 {
+      font-size: 24px;
+      font-family: 'PP Telegraf Bold', sans-serif;
+      margin: 0 0 20px;
+      color: black;
+    }
+
+    .faq-section-container {
+      width: 100%;
+    }
+
+
     .feature-text {
       width: 100%;
       padding: 15px 15px 15px 0;
@@ -229,7 +366,8 @@
         transform: none;
       }
       .content-container,
-      .features-container {
+      .features-container,
+      .faq-section-container {
         max-width: 1200px; /* 根据需要调整最大宽度 */
         margin: 0 auto;    /* 居中显示 */
         padding: 0 20px;   /* 左右内边距 */
@@ -540,6 +678,98 @@
   </div>
 </div>
 
+<div class="features-container">
+  <div class="features-header">
+    <h2>Features</h2>
+    <h3>How ZeitGuard Making Your Studies More Effective?</h3>
+    <button class="features-button">Check more</button>
+  </div>
+  <div class="quiz-section">
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature5.png" alt="Feature 5">
+      </div>
+      <div class="feature-text">
+        <h2>Journey</h2>
+        <p>Embark on a guided journey to understand and overcome procrastination. With 10 insightful chapters, Journey helps you uncover the root causes, build better habits, and take control of your time—one step at a time.</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature6.png" alt="Feature 6">
+      </div>
+      <div class="feature-text">
+        <h2>ZeitPost</h2>
+        <p>Turn learning about procrastination into an engaging adventure! With stamp collection and map illumination features, ZeitPost rewards your progress as you explore insightful chapters.</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature7.png" alt="Feature 7">
+      </div>
+      <div class="feature-text">
+        <h2>ICU Emergency Self-Help Kit</h2>
+        <p>Need immediate study support? The ICU Emergency Self-Help Kit provides quick access to the Focus Room for distraction-free work and the How-To guide for instant task solutions.</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/feature8.png" alt="Feature 8">
+      </div>
+      <div class="feature-text">
+        <h2>To Do</h2>
+        <p>Use the Eisenhower Matrix to prioritize effectively—separating urgent from important, so you can stay productive without the overwhelm. Make better decisions, eliminate distractions, and focus on what truly drives results.".</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="features-container">
+  <div class="download-header">
+    <h2>Get started with ZeitPost</h2>
+    <button class="download-button">Download</button>
+  </div>
+</div>
+
+<div class="faq-section-container">
+  <section class="faq-section">
+    <div class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is ZeitGuard?</span>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>ZeitGuard is an anti-procrastination app designed to help students manage their time effectively.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How does it work?</span>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>The app uses techniques such as the Eisenhower Matrix, focus sessions, and guided tasks to improve productivity.</p>
+        </div>
+      </div>
+      <!-- 可以继续添加其他 FAQ 项 -->
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p>&copy; 2025 ZeitGuard. All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact Us</a>
+        </nav>
+      </div>
+    </footer>
+
+
+  </section>
+</div>
 
 
 <script>
@@ -570,6 +800,23 @@
 
   window.addEventListener('resize', checkScreenSize);
   window.addEventListener('load', checkScreenSize);
+
+  // FAQ toggle 代码
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+  faqToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const faqItem = toggle.closest('.faq-item');
+      const answer = faqItem.querySelector('.faq-answer');
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        toggle.textContent = '+';
+      } else {
+        answer.style.display = 'block';
+        toggle.textContent = '-';
+      }
+    });
+  });
+
   document.getElementById('menu-button').addEventListener('click', toggleMenu);
 </script>
 </body>
