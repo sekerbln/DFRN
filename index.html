@@ -46,9 +46,17 @@
       font-family: 'PP Telegraf', sans-serif;
     }
 
-    .hero h2, .quiz-text h2, .hero button {
+    .hero h1, .quiz-text h2, .hero button {
       font-family: 'PP Telegraf Bold', sans-serif;
+      line-height: 0.9;
     }
+
+    .hero-description {
+      font-size: 18px;
+      color: #fff;
+      font-family: 'PP Telegraf Regular', sans-serif;
+    }
+
 
     body {
       font-size: 16px;
@@ -87,6 +95,21 @@
       padding: 20px;
       background: #F6F6F6;
       border-radius: 20px;
+    }
+
+    .faq-container h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 20px;
+      font-family: 'PP Telegraf Bold', sans-serif;
+      text-align: center;
+    }
+
+    .faq-container h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 20px;
+      font-family: 'PP Telegraf Bold', sans-serif;
     }
 
     .faq-section h2 {
@@ -564,37 +587,12 @@
       }
 
 
-      .features-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-      }
 
-      .feature-item {
-        width: calc(33.33% - 20px); /* Ensures three items per row */
-        background: #f4f4f4; /* Placeholder background */
-        border-radius: 20px;
-        text-align: left;
-        padding: 15px;
-      }
-
-      .feature-image-container {
-        width: 100%;
-        aspect-ratio: 1 / 1; /* Makes it square */
-        background: #bbb; /* Placeholder background */
-        border-radius: 20px;
-        overflow: hidden;
-      }
 
       .feature-image-container img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-      }
-
-      .feature-text-container {
-        padding: 10px;
       }
 
       .feature-text-container p {
@@ -671,8 +669,8 @@
     </div>
 
     <div class="hero">
-      <h2>ZeitGuard: The anti Procrastination App for Students</h2>
-      <h3>Struggling with procrastination? ZeitGuard helps students learn effectively. Download the app today!</h3>
+      <h1>ZeitGuard: The anti Procrastination App for Students</h1>
+      <h2 class="hero-description">Struggling with procrastination? ZeitGuard helps students learn effectively. Download the app today!</h2>
       <button>Download Now</button>
     </div>
   </div>
@@ -802,7 +800,7 @@
 <div class="faq-section-container">
   <section class="faq-section">
     <div class="faq-container">
-      <h2>Frequently Asked Questions</h2>
+      <h1>Frequently Asked Questions</h1>
       <div class="faq-item">
         <div class="faq-question">
           <span>What is ZeitGuard?</span>
