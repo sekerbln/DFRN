@@ -39,6 +39,14 @@
       font-style: normal;
     }
 
+    @font-face {
+      font-family: 'PP Monument Extended';
+      src: url('fonts/PPMonumentExtended-Bold.woff2') format('woff2'),
+      url('fonts/PPMonumentExtended-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -46,8 +54,48 @@
       font-family: 'PP Telegraf', sans-serif;
     }
 
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      padding: 20px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: white;
+      z-index: 1000;
+      height: 80px;
+    }
+
+    .header .logo {
+      position: absolute;
+      left: 40px;
+      top: 30px;
+      transform: none;
+      font-family: 'PP Monument Extended', sans-serif;
+    }
+
+    .logo {
+      left: 20px;
+      top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 10px;
+      font-family: 'PP Monument Extended', sans-serif;
+    }
+
+    .logo-short {
+      display: none;
+    }
+
+    .overlay-image {
+      max-width: 70%;
+      height: auto;
+    }
+
     .hero h1, .quiz-text h2, .hero button {
-      font-family: 'PP Telegraf Bold', sans-serif;
+      font-family: 'PP Monument Extended', sans-serif;
       line-height: 0.9;
     }
 
@@ -57,6 +105,92 @@
       font-family: 'PP Telegraf Regular', sans-serif;
       margin-top: 10px;
     }
+
+    .hero-image {
+      width: 100%;
+      height: 50vh;
+      background: url('images/about.jpg') no-repeat center center/cover;
+      border-radius: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: black;
+      overflow: hidden;
+      margin-top: 80px;
+      margin-bottom: 20px;
+    }
+
+    .hero {
+      width: 100%;
+      padding: 20px;
+      background-color: #000000;
+      color: white;
+      border-radius: 20px;
+      text-align: left;
+      line-height: 1;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+
+    .hero h3 {
+      margin-top: 5px;  /* 根据需要调整间距 */
+      font-size: 18px;   /* 可调整字体大小 */
+      font-family: 'PP Telegraf Regular', sans-serif; /* 或你需要的字体样式 */
+    }
+
+    .hero button {
+      background-color: white;
+      color: black;
+      font-family: 'PP Telegraf Bold', sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 12px 24px;
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+      margin-left: 0;
+      display: inline-block;
+    }
+
+    .content-section {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .list-item {
+      width: calc(50% - 10px); /* Two items per row */
+      display: flex;
+      flex-direction: column; /* Stack image and text */
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .section-header {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-family: 'PP Telegraf Bold', sans-serif;
+      margin: 0;
+    }
+
+    .section-header h3 {
+      font-size: 20px;
+      font-family: 'PP Telegraf Regular', sans-serif;
+      padding-left: 10px; /* 根据需要调整数值 */
+    }
+
 
 
     body {
@@ -226,6 +360,8 @@
       background: white; /* 背景色 */
       border-radius: 20px;
       line-height: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .feature-text h2 {
@@ -297,35 +433,35 @@
       background-color: #E0E0E0;
     }
 
-    .header {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      padding: 20px 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: white;
-      z-index: 1000;
+    .link-button {
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background-color: black;
+      color: #ffffff;
+      font-family: 'PP Telegraf Regular', sans-serif;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
     }
 
-    .header .logo {
-      position: absolute;
-      left: 40px;
-      top: 30px;
-      transform: none;
-      font-family: 'PP Telegraf Bold', sans-serif;
+    .link-button:hover {
+      background-color: #E0E0E0;
     }
 
-    .logo {
-      left: 20px;
-      top: 30px;
-      font-size: 24px;
-      font-weight: bold;
-      margin-left: 10px;
-      font-family: 'PP Telegraf Bold', sans-serif;
+    button.link-button {
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      width: 150px;
+      margin-top: 32px;
     }
+
 
     .menu-button {
       font-size: 20px;
@@ -349,8 +485,8 @@
       justify-content: flex-start;
       padding-left: 40px;
       transition: left 0.3s ease-in-out;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      padding-top: 60px;
+      box-shadow: none;
+      padding-top: 80px;
     }
 
     .menu a {
@@ -370,6 +506,15 @@
     .menu.show ~ .hero,
     .menu.show ~ .quiz-section {
       margin-left: 250px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .logo-full {
+        display: none;
+      }
+      .logo-short {
+        display: inline;
+      }
     }
 
     @media screen and (max-width: 1023px) {
@@ -448,7 +593,25 @@
         flex-basis: 60%;
         width: 80%;
       }
+      .industrial-members .quiz-section {
+        justify-content: flex-start;
+      }
+
+      .features-container.industrial-members .quiz-section {
+        justify-content: flex-start !important;
+      }
+
       .quiz-section {
+        flex: 1; /* Added */
+        flex-basis: 40%;
+        width: 20%; /* Changed from 889px to auto */
+        max-height: 100%;
+        display: flex;
+        flex-direction: column; /* Stacks quiz items vertically */
+        align-items: center;
+        gap: 20px;
+      }
+      .content-section {
         flex: 1; /* Added */
         flex-basis: 40%;
         width: 20%; /* Changed from 889px to auto */
@@ -464,6 +627,13 @@
       .quiz-item {
         width: 100%; /* Each quiz item takes full width of quiz-section */
       }
+      .features-container .content-section {
+        flex-direction: row;       /* 将项目排列方向改为行 */
+        flex-wrap: nowrap;         /* 不换行，确保四个项目在一行 */
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
       .features-container .quiz-section {
         flex-direction: row;       /* 将项目排列方向改为行 */
         flex-wrap: nowrap;         /* 不换行，确保四个项目在一行 */
@@ -471,58 +641,23 @@
         align-items: flex-start;
       }
 
+      .features-container .list-item {
+        width: calc(25% - 15px);    /* 四个项目平分宽度，可根据 gap 适当调整 */
+      }
+
       .features-container .quiz-item {
         width: calc(25% - 15px);    /* 四个项目平分宽度，可根据 gap 适当调整 */
       }
-    }
 
-    .hero-image {
-      width: 100%;
-      height: 60vh;
-      background: url('images/hero-image.png') no-repeat center center/cover;
-      border-radius: 20px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: black;
-      overflow: hidden;
-      margin-top: 80px;
-      margin-bottom: 20px;
-    }
-
-    .hero {
-      width: 100%;
-      padding: 20px;
-      background-color: #000000;
-      color: white;
-      border-radius: 20px;
-      text-align: left;
-      line-height: 1;
-      margin-bottom: 20px;
-      align-items: flex-start;
-    }
-
-    .hero h3 {
-      margin-top: 5px;  /* 根据需要调整间距 */
-      font-size: 18px;   /* 可调整字体大小 */
-      font-family: 'PP Telegraf Regular', sans-serif; /* 或你需要的字体样式 */
-    }
-
-    .hero button {
-      background-color: white;
-      color: black;
-      font-family: 'PP Telegraf Bold', sans-serif;
-      font-weight: bold;
-      font-size: 20px;
-      padding: 12px 24px;
-      cursor: pointer;
-      border: none;
-      border-radius: 12px;
-      margin-top: 20px;
-      margin-left: 0;
-      display: inline-block;
+      .features-container:first-of-type .content-section {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      .features-container:first-of-type .list-item {
+        flex: 0 0 calc(100% / 5);
+        max-width: calc(100% / 5);
+      }
     }
 
     .quiz-section {
@@ -542,6 +677,7 @@
       text-align: center;
       overflow: hidden;
       border-radius: 20px;
+      position: relative;
     }
 
     .quiz-image-container {
@@ -654,45 +790,49 @@
 
 <body>
 <header class="header">
-  <div class="logo" style="margin-left: 20px;">ZeitGuard</div><button class="menu-button" id="menu-button">☰</button>
+  <div class="logo" style="margin-left: 20px;">
+    <span class="logo-full">Decentralised Fabrication Research Network</span>
+    <span class="logo-short">DFRN</span>
+  </div>
+  <button class="menu-button" id="menu-button">☰</button>
 </header>
 
 <nav class="menu" id="menu">
   <a href="#">Home</a>
-  <a href="#">Features</a>
   <a href="#">About</a>
+  <a href="#">Members</a>
 </nav>
 
 <div class="content-container">
   <div class="hero-container">
     <div class="hero-image">
-      <img src="images/overlay-image1.png" alt="Overlay Image" class="overlay-image">
+      <img src="images/DFRN.png" alt="Overlay Image" class="overlay-image">
     </div>
 
     <div class="hero">
-      <h1>ZeitGuard: The anti Procrastination App for Students</h1>
-      <h2 class="hero-description">Struggling with procrastination? ZeitGuard helps students learn effectively. Download the app today!</h2>
-      <button>Download Now</button>
+      <h1>About DFRN</h1>
+      <h2 class="hero-description">We are a group of researchers, architects and technologists coming together to design and create the infrastructure for decentralised scientific practices around cementitious and concrete 3D Printing in architecture and engineering. We are exploring the potential of a decentralised - (blockchain governed) - physical infrastructure for the production of a building kit-of-parts using 3D printing and additive manufacturing</h2>
+      <button>Learn more</button>
     </div>
   </div>
 
   <div class="quiz-section">
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/quiz-image1.png" alt="Quiz Image 1">
+        <img src="images/Members-as.png" alt="Quiz Image 1">
       </div>
       <div class="feature-text">
-        <h4>QUIZ</h4>
-        <h2>Are you a procrastinator?</h2>
+        <h4>MEMBERS</h4>
+        <h2>Our Industrial Members</h2>
       </div>
     </div>
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/quiz-image2.png" alt="Quiz Image 2">
+        <img src="images/output-title.png" alt="Quiz Image 2">
       </div>
       <div class="feature-text">
-        <h4>FEATURES</h4>
-        <h2>How ZeitGuard Making Your Studies More Effective?</h2>
+        <h4>OUTPUT</h4>
+        <h2>New Research Output Title</h2>
       </div>
     </div>
   </div>
@@ -700,45 +840,82 @@
 
 <div class="features-container">
   <div class="features-header">
-    <h2>Highlight</h2>
-    <h3>How ZeitGuard Helps You Overcome Procrastination?</h3>
+    <h2>Members</h2>
     <button class="features-button">Check more</button>
+  </div>
+  <div class="section-header">
+    <h3>Research Members</h3>
   </div>
   <div class="quiz-section">
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature1.png" alt="Feature 1">
+        <img src="images/Members-Theo1.png" alt="Feature 5">
       </div>
       <div class="feature-text">
-        <h2>Scientific Insights into Procrastination – Uncovering the Root Cause</h2>
-        <p>Offers clear, accessible insights into procrastination—helping students understand its causes, effects, and impact.</p>
+        <h2>Theodore Dounas</h2>
+        <p>Heriot Watt University</p>
       </div>
     </div>
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature2.png" alt="Feature 2">
+        <img src="images/Members-Davide1.png" alt="Feature 6">
       </div>
       <div class="feature-text">
-        <h2>Instant Study Support – Stay Focused, Distraction-Free</h2>
-        <p>Through step-by-step study task guidance and focus room, help you concentrate on your study task and get things done.</p>
+        <h2>Davide Lombardi</h2>
+        <p>Xian Jiaotong Liverpool University</p>
       </div>
     </div>
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature3.png" alt="Feature 3">
+        <img src="images/Members-Agkathidis.png" alt="Feature 7">
       </div>
       <div class="feature-text">
-        <h2>Prioritize Smarter with the Eisenhower Matrix – Focus on What Truly Matters</h2>
-        <p>Struggling with task overload? Our app uses the Eisenhower Matrix to help you prioritize effectively.</p>
+        <h2>Asterios Agkathidis</h2>
+        <p>University of Liverpool</p>
       </div>
     </div>
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature4.png" alt="Feature 4">
+        <img src="images/Members-Berdos.png" alt="Feature 8">
       </div>
       <div class="feature-text">
-        <h2>Your Schedule, Simplified – See Everything at a Glance</h2>
-        <p>Effortlessly manage your coursework and daily tasks with our intuitive calendar. View your schedule by day, week, or month—all in one place.</p>
+        <h2>Yorgos Berdos</h2>
+        <p>Dundee University</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/Members-Vele.png" alt="Feature 8">
+      </div>
+      <div class="feature-text">
+        <h2>Jiri Vele</h2>
+        <p>Czech Technology University of Prague</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="features-container industrial-members">
+  <div class="section-header">
+    <h3>Industrial Members</h3>
+  </div>
+  <div class="quiz-section">
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/Members-as.png" alt="Feature 5">
+      </div>
+      <div class="feature-text">
+        <h2>Adventurous systems</h2>
+        <p>adventurous.systems</p>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/Members-ArchiDAO.png" alt="Feature 6">
+      </div>
+      <div class="feature-text">
+        <h2>Architecture Decentralised Autonomous Organisation</h2>
+        <p>archidao.io</p>
       </div>
     </div>
   </div>
@@ -746,199 +923,140 @@
 
 <div class="features-container">
   <div class="features-header">
-    <h2>Features</h2>
-    <h3>How ZeitGuard Making Your Studies More Effective?</h3>
+    <h2>Output</h2>
     <button class="features-button">Check more</button>
   </div>
   <div class="quiz-section">
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature5.png" alt="Feature 5">
+        <img src="images/output.png" alt="Feature 5">
       </div>
       <div class="feature-text">
-        <h2>Journey</h2>
-        <p>Embark on a guided journey to understand and overcome procrastination. With 10 insightful chapters, Journey helps you uncover the root causes, build better habits, and take control of your time—one step at a time.</p>
+        <h2>Output 1</h2>
+        <p> Link to prototypes / repository</p>
+        <button class="link-button">Link</button>
       </div>
     </div>
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature6.png" alt="Feature 6">
+        <img src="images/output.png" alt="Feature 5">
       </div>
       <div class="feature-text">
-        <h2>ZeitPost</h2>
-        <p>Turn learning about procrastination into an engaging adventure! With stamp collection and map illumination features, ZeitPost rewards your progress as you explore insightful chapters.</p>
+        <h2>Output 2</h2>
+        <p> Link to prototypes / repository</p>
+        <button class="link-button">Link</button>
       </div>
     </div>
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature7.png" alt="Feature 7">
+        <img src="images/output.png" alt="Feature 5">
       </div>
       <div class="feature-text">
-        <h2>ICU Emergency Self-Help Kit</h2>
-        <p>Need immediate study support? The ICU Emergency Self-Help Kit provides quick access to the Focus Room for distraction-free work and the How-To guide for instant task solutions.</p>
+        <h2>Output 3</h2>
+        <p> Link to prototypes / repository</p>
+        <button class="link-button">Link</button>
       </div>
     </div>
     <div class="quiz-item">
       <div class="quiz-image-container">
-        <img src="images/feature8.png" alt="Feature 8">
+        <img src="images/output.png" alt="Feature 5">
       </div>
       <div class="feature-text">
-        <h2>To Do</h2>
-        <p>Use the Eisenhower Matrix to prioritize effectively—separating urgent from important, so you can stay productive without the overwhelm. Make better decisions, eliminate distractions, and focus on what truly drives results.".</p>
+        <h2>Output 4</h2>
+        <p> Link to prototypes / repository</p>
+        <button class="link-button">Link</button>
       </div>
     </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/output.png" alt="Feature 5">
+      </div>
+      <div class="feature-text">
+        <h2>Output 5</h2>
+        <p> Link to prototypes / repository</p>
+        <button class="link-button">Link</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<div class="features-container">
-  <div class="download-header">
-    <h2>Get started with ZeitGuard</h2>
-    <button class="download-button">Download</button>
+<div class="features-container industrial-members">
+  <div class="features-header">
+    <h2>Call for Action</h2>
+    <h3>collaboration</h3>
+    <button class="features-button">Check more</button>
   </div>
-</div>
-
-
-<div class="faq-section-container">
-  <section class="faq-section">
-    <div class="faq-container">
-      <h1>Frequently Asked Questions</h1>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What is ZeitGuard?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>ZeitGuard is an anti-procrastination app designed specifically for students. It helps you overcome procrastination by offering comprehensive educational content about procrastination, improving study efficiency, time management, and overall student productivity.</p>
-        </div>
+  <div class="quiz-section">
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/output.png" alt="Feature 5">
       </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How does it work?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>ZeitGuard uses scientifically backed insights, instant study support, and effective task prioritization techniques like the Eisenhower Matrix. This helps you identify the root causes of procrastination and stay focused on what truly matters.</p>
-        </div>
+      <div class="feature-text">
+        <h2>3D Printing Companies</h2>
+        <button class="link-button">Contact Us</button>
       </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What are the core features of ZeitGuard?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>Key features include:
-
-            Journey: A guided exploration with 10 insightful chapters to help you understand and overcome procrastination.
-            ZeitPost: An engaging feature that turns your learning process into an adventure with interactive rewards.
-            ICU Emergency Self-Help Kit: Provides immediate focus and task solutions during critical moments.
-            To Do Lists: Integrates the Eisenhower Matrix to help you prioritize tasks effectively and boost overall productivity.</p>
-        </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/output.png" alt="Feature 5">
       </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How does the Eisenhower Matrix work within ZeitGuard?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>The Eisenhower Matrix categorizes tasks by urgency and importance, enabling you to quickly identify and focus on the most critical assignments. This structured approach improves study management and enhances student productivity.
-
-          </p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What is the Journey feature?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>The Journey feature takes you through 10 insightful chapters designed to uncover the root causes of procrastination. It provides step-by-step guidance for developing better habits and effective time management strategies.
-
-          </p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How does ZeitPost motivate my learning?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>ZeitPost turns your study process into an interactive adventure by incorporating elements like stamp collection and map illumination. This engaging approach motivates you to keep progressing while enhancing your study efficiency.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What is the ICU Emergency Self-Help Kit?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>The ICU Emergency Self-Help Kit is designed for moments when you need immediate study support. It quickly directs you to a distraction-free focus mode and offers instant task solutions, ensuring you never miss an important study opportunity.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How does the To Do List improve my task management?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>By integrating the Eisenhower Matrix, the To Do List helps you differentiate between urgent and important tasks. This enables you to better organize your day, manage your study schedule, and maintain high levels of student productivity.
-
-          </p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Is ZeitGuard suitable for all students?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>Yes, whether you’re a high school or a college student, ZeitGuard offers tailored solutions to overcome procrastination and enhance study management. It adapts to various learning needs and helps improve overall productivity.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How do I download and start using ZeitGuard?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>Simply click on the “Download Now” or “Download” button on the site. After installation, follow the in-app guide to start your journey toward effective time management and a procrastination-free study routine.
-          </p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What sets ZeitGuard apart from other productivity apps?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>Unlike traditional productivity tools, ZeitGuard not only helps manage tasks but also provides scientific insights into procrastination, interactive learning features, and immediate support through its unique Journey, ZeitPost, and ICU Emergency Self-Help Kit features.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What tangible benefits can I expect from using ZeitGuard?</span>
-          <button class="faq-toggle">+</button>
-        </div>
-        <div class="faq-answer">
-          <p>With its systematic approach to time management and task prioritization, ZeitGuard helps reduce procrastination, boost focus, and streamline both your academic and daily schedules, leading to improved study outcomes and overall student productivity.
-          </p>
-        </div>
+      <div class="feature-text">
+        <h2>Researchers in Blockchain and 3D Printing</h2>
+        <button class="link-button">Contact Us</button>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <p>&copy; 2025 ZeitGuard. All rights reserved.</p>
-        <nav class="footer-nav">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Contact Us</a>
-        </nav>
-      </div>
-    </footer>
-
-
-  </section>
+  </div>
 </div>
+
+<div class="features-container industrial-members">
+  <div class="features-header">
+    <h2>Media and PR</h2>
+    <button class="features-button">Check more</button>
+  </div>
+  <div class="quiz-section">
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/images.png" alt="Feature 5">
+      </div>
+      <div class="feature-text">
+        <h2>Images</h2>
+        <button class="link-button">Check More</button>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/videos.png" alt="Feature 5">
+      </div>
+      <div class="feature-text">
+        <h2>Videos</h2>
+        <button class="link-button">Check More</button>
+      </div>
+    </div>
+    <div class="quiz-item">
+      <div class="quiz-image-container">
+        <img src="images/keynotes.png" alt="Feature 5">
+      </div>
+      <div class="feature-text">
+        <h2>Keynotes</h2>
+        <button class="link-button">Check More</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 DFRN. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </div>
+</footer>
 
 <script>
   function toggleMenu() {
@@ -947,6 +1065,7 @@
     menu.classList.toggle('show');
     if (menu.classList.contains('show')) {
       body.style.marginLeft = "250px";
+      body.style.marginTop = "250px";
     } else {
       body.style.marginLeft = "0";
     }
@@ -969,129 +1088,11 @@
   window.addEventListener('resize', checkScreenSize);
   window.addEventListener('load', checkScreenSize);
 
-  // FAQ toggle 代码
-  const faqToggles = document.querySelectorAll('.faq-toggle');
-  faqToggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const faqItem = toggle.closest('.faq-item');
-      const answer = faqItem.querySelector('.faq-answer');
-      if (answer.style.display === 'block') {
-        answer.style.display = 'none';
-        toggle.textContent = '+';
-      } else {
-        answer.style.display = 'block';
-        toggle.textContent = '-';
-      }
-    });
-  });
+
 
   document.getElementById('menu-button').addEventListener('click', toggleMenu);
 </script>
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is ZeitGuard?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ZeitGuard is an anti-procrastination app designed specifically for students. It helps you overcome procrastination by offering comprehensive educational content about procrastination, improving study efficiency, time management, and overall student productivity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does it work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ZeitGuard uses scientifically backed insights, instant study support, and effective task prioritization techniques like the Eisenhower Matrix. This helps you identify the root causes of procrastination and stay focused on what truly matters."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the core features of ZeitGuard?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Key features include: Journey - A guided exploration with 10 insightful chapters to help you understand and overcome procrastination. ZeitPost - An engaging feature that turns your learning process into an adventure with interactive rewards. ICU Emergency Self-Help Kit - Provides immediate focus and task solutions during critical moments. To Do Lists - Integrates the Eisenhower Matrix to help you prioritize tasks effectively and boost overall productivity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the Eisenhower Matrix work within ZeitGuard?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Eisenhower Matrix categorizes tasks by urgency and importance, enabling you to quickly identify and focus on the most critical assignments. This structured approach improves study management and enhances student productivity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the Journey feature?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Journey feature takes you through 10 insightful chapters designed to uncover the root causes of procrastination. It provides step-by-step guidance for developing better habits and effective time management strategies."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does ZeitPost motivate my learning?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ZeitPost turns your study process into an interactive adventure by incorporating elements like stamp collection and map illumination. This engaging approach motivates you to keep progressing while enhancing your study efficiency."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the ICU Emergency Self-Help Kit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The ICU Emergency Self-Help Kit is designed for moments when you need immediate study support. It quickly directs you to a distraction-free focus mode and offers instant task solutions, ensuring you never miss an important study opportunity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the To Do List improve my task management?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "By integrating the Eisenhower Matrix, the To Do List helps you differentiate between urgent and important tasks. This enables you to better organize your day, manage your study schedule, and maintain high levels of student productivity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is ZeitGuard suitable for all students?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, whether you’re a high school or a college student, ZeitGuard offers tailored solutions to overcome procrastination and enhance study management. It adapts to various learning needs and helps improve overall productivity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I download and start using ZeitGuard?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Simply click on the 'Download Now' or 'Download' button on the site. After installation, follow the in-app guide to start your journey toward effective time management and a procrastination-free study routine."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What sets ZeitGuard apart from other productivity apps?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Unlike traditional productivity tools, ZeitGuard not only helps manage tasks but also provides scientific insights into procrastination, interactive learning features, and immediate support through its unique Journey, ZeitPost, and ICU Emergency Self-Help Kit features."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What tangible benefits can I expect from using ZeitGuard?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "With its systematic approach to time management and task prioritization, ZeitGuard helps reduce procrastination, boost focus, and streamline both your academic and daily schedules, leading to improved study outcomes and overall student productivity."
-        }
-      }
-    ]
-  }
-</script>
 
 </body>
 </html>
