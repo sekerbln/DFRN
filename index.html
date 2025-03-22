@@ -88,6 +88,14 @@ We are a group of researchers, architects and technologists coming together to d
 
     .logo-short {
       display: none;
+      font-size: 28px;
+    }
+
+    .mobile-tagline {
+      display: none;
+      font-size: 16px; /* 可根据需要调整字体大小 */
+      color: black;     /* 可根据需要调整颜色 */
+      margin-top: 8px;
     }
 
     .overlay-image {
@@ -514,7 +522,11 @@ We are a group of researchers, architects and technologists coming together to d
         display: none;
       }
       .logo-short {
-        display: inline;
+        display: inline-block;
+      }
+      .mobile-tagline {
+        display: block;
+        margin-top: -6px;
       }
     }
 
@@ -793,7 +805,10 @@ We are a group of researchers, architects and technologists coming together to d
 <header class="header">
   <div class="logo" style="margin-left: 20px;">
     <span class="logo-full">Decentralised Fabrication Research Network</span>
-    <span class="logo-short">DFRN</span>
+    <span class="logo-short">
+    DFRN
+    <span class="mobile-tagline">Decentralised Fabrication Research Network</span>
+  </span>
   </div>
   <button class="menu-button" id="menu-button">☰</button>
 </header>
@@ -807,7 +822,7 @@ We are a group of researchers, architects and technologists coming together to d
 <div class="content-container">
   <div class="hero-container">
     <div class="hero-image">
-      <img src="images/DFRN.png" alt="Overlay Image" class="overlay-image">
+      <img src="images/DFRN_full.png" alt="Overlay Image" class="overlay-image">
     </div>
 
     <div class="hero">
