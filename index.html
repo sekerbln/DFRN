@@ -96,6 +96,7 @@ We are a group of researchers, architects and technologists coming together to d
       font-size: 16px; /* 可根据需要调整字体大小 */
       color: black;     /* 可根据需要调整颜色 */
       margin-top: 8px;
+      line-height: 1;
     }
 
     .overlay-image {
@@ -528,6 +529,16 @@ We are a group of researchers, architects and technologists coming together to d
         display: block;
         margin-top: -6px;
       }
+      .header {
+        height: 120px;  /* 设置为所需的高度 */
+        padding: 30px 20px; /* 根据需要调整内边距，使内容垂直居中 */
+      }
+      .hero-image {
+        height: 30vh; /* 调整为你需要的较低高度 */
+      }
+      .hero-container {
+        margin-top: 100px;
+      }
     }
 
     @media screen and (max-width: 1023px) {
@@ -807,7 +818,10 @@ We are a group of researchers, architects and technologists coming together to d
     <span class="logo-full">Decentralised Fabrication Research Network</span>
     <span class="logo-short">
     DFRN
-    <span class="mobile-tagline">Decentralised Fabrication Research Network</span>
+    <span class="mobile-tagline">
+  Decentralised Fabrication<br>
+  Research Network
+</span>
   </span>
   </div>
   <button class="menu-button" id="menu-button">☰</button>
